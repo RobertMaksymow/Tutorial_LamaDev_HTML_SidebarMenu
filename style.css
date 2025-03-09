@@ -16,17 +16,21 @@
 .sidebar-top,
 .sidebar-center,
 .sidebar-bottom {
-  width: 80%;
-  padding: 10px 0;
-  margin-bottom: 10px;
   display: flex;
   align-items: center;
+  width: 80%;
   border-bottom: 1px solid #4b4b4b;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.sidebar-center {
+  padding: 0;
 }
 
 .sidebar-bottom {
-  border: none;
   justify-content: center;
+  border: none;
 }
 
 .logo {
@@ -48,14 +52,11 @@
 }
 
 .list-item {
+  margin-bottom: 10px;
   font-size: 14px;
   font-weight: 500;
-  margin: 10px 0;
-  padding: 10px;
-  display: flex;
-  align-items: center;
   cursor: pointer;
-  /* background-color: brown; */
+  padding: 10px;
   border-radius: 10px;
 }
 
@@ -64,8 +65,8 @@
   font-size: 20px;
 }
 
-.list-item:hover,
-.list-item.active {
+.list-item.active,
+.list-item:hover {
   background-color: #374151;
   color: white;
 }
@@ -73,17 +74,56 @@
 .color-box {
   width: 20px;
   height: 20px;
-  border: 1px solid rgb(160, 159, 159);
-  border-radius: 10%;
-  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #9ca3af;
   margin-right: 15px;
+  cursor: pointer;
 }
+
 .dark {
   background-color: #111827;
 }
+
 .night {
   background-color: #312e81;
 }
+
 .light {
   background-color: #f3f4f6;
+}
+
+.sidebar.night {
+  background-color: #312e81;
+  color: #b4bbc7;
+}
+
+.list-item.night.active {
+  background-color: #4338ca;
+}
+
+.sidebar.light {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+.list-item.light.active {
+  background-color: #d1d5db;
+  color: #111827;
+}
+
+@media only screen and (max-width: 768px) {
+  .sidebar {
+    width: 50px;
+  }
+  .brand,
+  .list-item-text {
+    display: none;
+  }
+  .sidebar-bottom {
+    flex-direction: column;
+  }
+  .color-box {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
 }
